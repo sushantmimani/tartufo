@@ -50,12 +50,17 @@ Options:
                                   Whether to include the default regex list
                                   when configuring search patterns. Only
                                   applicable if --rules is also specified.
-                                  [default: True]
+                                  [default: default-regexes]
 
-  --entropy / --no-entropy        Enable entropy checks.  [default: True]
+  --entropy / --no-entropy        Enable entropy checks.  [default: entropy]
   --regex / --no-regex            Enable high signal regexes checks.
-                                  [default: True]
-
+                                  [default: regex]
+                                  
+  --scan-filenames / --no-scan-filenames
+                                  Check the names of files being scanned as
+                                  well as their contents.  [default: scan-
+                                  filenames]
+                                  
   -ip, --include-path-patterns TEXT
                                   Specify a regular expression which matches
                                   Git object paths to include in the scan.
@@ -131,7 +136,7 @@ Options:
 
   --log-timestamps / --no-log-timestamps
                                   Enable or disable timestamps in logging
-                                  messages.  [default: True]
+                                  messages.  [default: log-timestamps]
 
   --entropy-sensitivity INTEGER RANGE
                                   Modify entropy detection sensitivity. This

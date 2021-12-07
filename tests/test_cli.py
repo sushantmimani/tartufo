@@ -1,4 +1,5 @@
 import logging
+import os
 import unittest
 from collections import namedtuple
 from pathlib import Path
@@ -103,9 +104,9 @@ class ProcessIssuesTest(unittest.TestCase):
             result = runner.invoke(
                 cli.main, ["--output-dir", "./foo", "scan-local-repo", "."]
             )
-        output_dir = (
+        output_dir = os.path.realpath(
             Path(dirname) / "foo" / "tartufo-scan-results-nownownow"
-        ).resolve()
+        )
         self.assertEqual(
             result.output,
             f"Results have been saved in {output_dir}\n",

@@ -105,4 +105,4 @@ jobs:
     name: Tartufo Scan
     runs-on: ubuntu-latest
     steps:
-    - uses: godaddy@tartufo-action@13631ef8574f18c2eac608e26084eb8bc42f6a44
+    - uses: godaddy/tartufo-action@13631ef8574f18c2eac608e26084eb8bc42f6a44

@@ -1,0 +1,25 @@
+name: Tartufo
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Define branch name'
+        required: true
+        default: 'main'
+
+jobs:
+  tartufo:
+    name: Tartufo Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      name: Checkout the repo
+    - uses: godaddy/tartufo-action@c64c572235d810460d0d6876e9c705ad5002b353
+      with:
+        branch: ${{ github.event.inputs.branch }}
+      name: Run tartufo scan

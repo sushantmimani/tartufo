@@ -105,4 +105,6 @@ jobs:
     name: Tartufo Scan
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout the repo
+      uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
     - uses: godaddy/tartufo-action@13631ef8574f18c2eac608e26084eb8bc42f6a44

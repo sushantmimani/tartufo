@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    branches: [ main, v3.x ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, v3.x ]
+    branches: [ main ]
 
 jobs:
   unit-test:
@@ -101,3 +101,8 @@ jobs:
     - name: Build
       run: |
         docker build .
+  tartufo:
+    name: Tartufo Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: godaddy@tartufo-action@13631ef8574f18c2eac608e26084eb8bc42f6a44
